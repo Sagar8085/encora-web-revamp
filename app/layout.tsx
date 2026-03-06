@@ -46,7 +46,7 @@ export const metadata: Metadata = {
       "Neutral infrastructure for returns: bins, tags, a verification cloud, and APIs.",
     url: process.env.NEXT_PUBLIC_BASE_URL,
     siteName: "Encora",
-    images: [{ url: "/images/og-encora.png", width: 1200, height: 630 }],
+    images: [{ url: `${process.env.NEXT_PUBLIC_CDN_URL || ''}/images/og-encora.png`, width: 1200, height: 630 }],
     type: "website",
   },
   twitter: {
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Encora — Smart returns. Verified.",
     description:
       "Neutral infrastructure for returns: bins, tags, a verification cloud, and APIs.",
-    images: ["/images/og-encora.png"],
+    images: [`${process.env.NEXT_PUBLIC_CDN_URL || ''}/images/og-encora.png`],
   },
   ...(process.env.NEXT_PUBLIC_MODE === "development" && {
     robots: {

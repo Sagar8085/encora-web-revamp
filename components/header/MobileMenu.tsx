@@ -65,18 +65,16 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                     className="group flex items-center gap-3 transition-all duration-300 ease-out hover:translate-x-1"
                   >
                     <div
-                      className={`overflow-hidden transition-all duration-300 ease-out ${
-                        active
-                          ? "max-w-4 opacity-100 ml-1"
-                          : "max-w-0 opacity-0 group-hover:max-w-4 group-hover:opacity-100 group-hover:ml-1"
-                      } flex-shrink-0`}
+                      className={`overflow-hidden transition-all duration-300 ease-out ${active
+                        ? "max-w-4 opacity-100 ml-1"
+                        : "max-w-0 opacity-0 group-hover:max-w-4 group-hover:opacity-100 group-hover:ml-1"
+                        } flex-shrink-0`}
                     >
                       <div
-                        className={`w-4 h-4 rounded-full flex items-center justify-center ${
-                          active
-                            ? "bg-encora-green dark:bg-encora-mint scale-110"
-                            : "bg-encora-green dark:bg-encora-mint"
-                        }`}
+                        className={`w-4 h-4 rounded-full flex items-center justify-center ${active
+                          ? "bg-encora-green dark:bg-encora-mint scale-110"
+                          : "bg-encora-green dark:bg-encora-mint"
+                          }`}
                       >
                         <ArrowRight
                           size={10}
@@ -86,11 +84,10 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                     </div>
                     <Link
                       href={item.href}
-                      className={`text-lg font-semibold transition-all duration-300 py-3 flex-1 border-b ${
-                        active
-                          ? "text-encora-green dark:text-encora-mint border-encora-green/30 dark:border-encora-mint/30"
-                          : "text-encora-text dark:text-white hover:text-encora-green dark:hover:text-encora-mint border-transparent hover:border-encora-green/20 dark:hover:border-encora-mint/20"
-                      }`}
+                      className={`text-lg font-semibold transition-all duration-300 py-3 flex-1 border-b ${active
+                        ? "text-encora-green dark:text-encora-mint border-encora-green/30 dark:border-encora-mint/30"
+                        : "text-encora-text dark:text-white hover:text-encora-green dark:hover:text-encora-mint border-transparent hover:border-encora-green/20 dark:hover:border-encora-mint/20"
+                        }`}
                       onClick={() => setIsOpen(false)}
                     >
                       {item.label}
@@ -112,9 +109,8 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                 Get Started
                 <ArrowRight
                   size={16}
-                  className={`transition-transform duration-300 ${
-                    isChartOptionsOpen ? "rotate-90" : ""
-                  }`}
+                  className={`transition-transform duration-300 ${isChartOptionsOpen ? "rotate-90" : ""
+                    }`}
                 />
               </button>
 
@@ -125,6 +121,8 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                     { label: "Solutions", href: "/solutions" },
                     { label: "Encora Reuse", href: "/encora-reuse" },
                     { label: "Retail Returns (RetAI)", href: "/encora-access" },
+                    { label: "Encora Vendor", href: "https://encora.co/become-a-encora-vendor/" },
+                    { label: "Individual", href: "https://user.encora.co/individual" }
                   ].map((link) => (
                     <button
                       key={link.href}

@@ -1,11 +1,14 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import Image from "next/image";
 import { MODULES, ENVIRONMENTS } from "./data";
 import Link from "next/link";
 
 export default function SolutionsPage() {
   const sectionRef = useRef(null);
+
+
+
   return (
     <main className="min-h-screen text-foreground">
       <section

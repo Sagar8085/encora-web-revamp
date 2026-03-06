@@ -1,6 +1,6 @@
 // app/encora-access/page.tsx
 "use client";
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
@@ -10,6 +10,7 @@ import { HERO_STATS, HOW_STEPS, WHERE_FITS } from "./data";
 
 export default function EncoraAccessPage() {
   const sectionRef = useRef(null);
+
   return (
     <main className="min-h-screen text-foreground">
       {/* HERO */}
