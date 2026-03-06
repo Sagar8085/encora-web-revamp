@@ -48,12 +48,15 @@ export default function EncoraReuseV2() {
         className="relative min-h-[80vh] mt-16 lg:mt-0 sm:min-h-[70vh] lg:min-h-[100vh] flex items-center align-center overflow-hidden bg-card py-[25px] sm:py-0 "
       >
         {/* Background Image Layer */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-center"
-          style={{
-            backgroundImage: "url('/images/Reuse page hero.png')",
-          }}
-        />
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/Reuse page hero.png"
+            alt="Reuse page background"
+            fill
+            priority
+            className="object-cover object-center"
+          />
+        </div>
 
         {/* Overlay Layer */}
         <div

@@ -13,12 +13,15 @@ export default function SolutionsPage() {
         className="relative  mt-16 lg:mt-0 min-h-[70vh] sm:min-h-[80vh] lg:min-h-[100vh] flex items-center align-center overflow-hidden bg-card"
       >
         {/* Background Image Layer */}
-        <div
-          className="absolute inset-0 z-0 bg-cover bg-no-repeat bg-[position:center] md:bg-[position:left_center]"
-          style={{
-            backgroundImage: "url('/images/solutions hero image.png')",
-          }}
-        />
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/solutions hero image.png"
+            alt="Solutions background"
+            fill
+            priority
+            className="object-cover object-center md:object-[left_center]"
+          />
+        </div>
 
         {/* Overlay Layer */}
         <div

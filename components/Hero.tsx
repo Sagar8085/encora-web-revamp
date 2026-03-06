@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 
@@ -31,14 +32,15 @@ export default function HeroSection() {
   return (
     <section className="relative min-h-[100vh] flex items-center justify-center overflow-hidden pt-24 sm:pt-32">
       {/* Background Image */}
-      <div
-        className="absolute inset-0 -z-10 bg-center bg-no-repeat opacity-40 dark:opacity-20"
-        style={{
-          backgroundImage:
-            "url('/images/hero-revamp.png')",
-          backgroundSize: "cover",
-        }}
-      />
+      <div className="absolute inset-0 -z-10 opacity-40 dark:opacity-20">
+        <Image
+          src="/images/hero-revamp.png"
+          alt="Hero background"
+          fill
+          priority
+          className="object-cover object-center"
+        />
+      </div>
 
       {/* Background decorative elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
