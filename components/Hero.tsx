@@ -104,7 +104,7 @@ export default function HeroSection() {
 
           <Link
             href="/bin"
-            className="inline-flex rounded-2xl px-5 py-3 font-medium items-center justify-center border border-border text-sm hover:bg-accent hover:text-accent-foreground transition dark:text-white dark:border-white/20"
+            className="inline-flex rounded-2xl px-5 py-3 font-medium items-center justify-center border-2 border-emerald-500 text-emerald-600  hover:bg-emerald-50 shadow-md hover:shadow-lg transition-all duration-200 dark:bg-transparent dark:border-white/20 dark:text-white dark:hover:bg-white/10"
           >
             See the Bin
           </Link>
