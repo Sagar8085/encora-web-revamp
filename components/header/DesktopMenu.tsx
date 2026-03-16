@@ -63,7 +63,7 @@ export default function DesktopMenu({ isOpen, setIsOpen }: DesktopMenuProps) {
       </div>
 
       {/* Menu Links */}
-      <ul className="space-y-2 mb-4">
+      <ul className="space-y-2 mb-4 max-h-[50vh] overflow-y-auto pr-2 custom-scrollbar">
         {menuItems.map((item) => {
           const active = isActive(item.href);
           return (
@@ -72,18 +72,16 @@ export default function DesktopMenu({ isOpen, setIsOpen }: DesktopMenuProps) {
               className="group flex items-center gap-2 transition-all duration-300 ease-out hover:translate-x-1"
             >
               <div
-                className={`overflow-hidden transition-all duration-300 ease-out ${
-                  active
-                    ? "max-w-3 opacity-100 ml-1"
-                    : "max-w-0 opacity-0 group-hover:max-w-3 group-hover:opacity-100 group-hover:ml-1"
-                } flex-shrink-0`}
+                className={`overflow-hidden transition-all duration-300 ease-out ${active
+                  ? "max-w-3 opacity-100 ml-1"
+                  : "max-w-0 opacity-0 group-hover:max-w-3 group-hover:opacity-100 group-hover:ml-1"
+                  } flex-shrink-0`}
               >
                 <div
-                  className={`w-3 h-3 rounded-full flex items-center justify-center ${
-                    active
-                      ? "bg-encora-green dark:bg-encora-mint scale-110"
-                      : "bg-encora-green dark:bg-encora-mint"
-                  }`}
+                  className={`w-3 h-3 rounded-full flex items-center justify-center ${active
+                    ? "bg-encora-green dark:bg-encora-mint scale-110"
+                    : "bg-encora-green dark:bg-encora-mint"
+                    }`}
                 >
                   <ArrowRight
                     size={8}
@@ -93,11 +91,10 @@ export default function DesktopMenu({ isOpen, setIsOpen }: DesktopMenuProps) {
               </div>
               <Link
                 href={item.href}
-                className={`font-medium transition-all duration-300 py-2 flex-1 ${
-                  active
-                    ? "text-encora-green dark:text-encora-mint font-semibold"
-                    : "text-encora-text dark:text-white hover:text-encora-green dark:hover:text-encora-mint"
-                }`}
+                className={`font-medium transition-all duration-300 py-2 flex-1 ${active
+                  ? "text-encora-green dark:text-encora-mint font-semibold"
+                  : "text-encora-text dark:text-white hover:text-encora-green dark:hover:text-encora-mint"
+                  }`}
                 onClick={() => setIsOpen(false)}
               >
                 {item.label}
@@ -132,14 +129,7 @@ export default function DesktopMenu({ isOpen, setIsOpen }: DesktopMenuProps) {
               { label: "Solutions", href: "/solutions" },
               { label: "Encora Reuse", href: "/encora-reuse" },
               { label: "Retail Returns (RetAI)", href: "/encora-access" },
-              {
-                label: "Vendor",
-                href: "https://encora.co/become-a-encora-vendor/",
-              },
-              {
-                label: "Individual",
-                href: "https://user.encora.co/individual",
-              },
+
             ].map((link) => (
               <Link
                 key={link.href}

@@ -7,4 +7,6 @@ export const menuItems = [
     { href: "/blog-doc", label: "Blog/Docs" },
     { href: "/about", label: "About" },
     { href: "/contact-us", label: "Contact" },
+    { href: "https://encora.co/become-a-encora-vendor/", label: "Encora Vendor" },
+    { href: "https://user.encora.co/individual", label: "Individual" }
 ];

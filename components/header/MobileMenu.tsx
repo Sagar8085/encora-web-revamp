@@ -121,8 +121,7 @@ export default function MobileMenu({ isOpen, setIsOpen }: MobileMenuProps) {
                     { label: "Solutions", href: "/solutions" },
                     { label: "Encora Reuse", href: "/encora-reuse" },
                     { label: "Retail Returns (RetAI)", href: "/encora-access" },
-                    { label: "Encora Vendor", href: "https://encora.co/become-a-encora-vendor/" },
-                    { label: "Individual", href: "https://user.encora.co/individual" }
+
                   ].map((link) => (
                     <button
                       key={link.href}

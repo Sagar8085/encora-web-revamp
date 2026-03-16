@@ -84,6 +84,7 @@
 }
 
 @layer components {
+
   /* Button Styles - Encora System */
   .btn-primary {
     @apply bg-[#194C4D] text-white px-8 py-3 rounded-lg text-base font-semibold hover:bg-[#0F3536] transition-all duration-300 shadow-sm hover:shadow-md;
@@ -165,6 +166,7 @@
 }
 
 @layer utilities {
+
   /* Custom utilities for Encora design system */
   .text-balance {
     text-wrap: balance;
@@ -174,21 +176,33 @@
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
+  .custom-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .custom-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
   .section-spacing {
-    padding-top: 4rem; /* 64px – mobile */
+    padding-top: 4rem;
+    /* 64px – mobile */
     padding-bottom: 4rem;
   }
 
   @media (min-width: 768px) {
     .section-spacing {
-      padding-top: 6rem; /* 96px – desktop */
+      padding-top: 6rem;
+      /* 96px – desktop */
       padding-bottom: 6rem;
     }
   }
 
   @media (min-width: 1024px) {
     .section-spacing {
-      padding-top: 7.5rem; /* 120px – large desktop */
+      padding-top: 7.5rem;
+      /* 120px – large desktop */
       padding-bottom: 7.5rem;
     }
   }
@@ -200,6 +214,7 @@
 h2 {
   margin-bottom: 1.25rem;
 }
+
 p {
   margin-bottom: 1rem;
 }
