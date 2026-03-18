@@ -8,7 +8,7 @@ export const metadata = {
 export default function ReusePlatformPage() {
   return (
     <main className="min-h-screen text-foreground">
-      <section className="container mx-auto max-w-3xl px-6 py-16 lg:py-24 mt-[5rem]">
+      <section className="container mx-auto max-w-3xl px-6 py-16  mt-[5rem]">
         <h1 className="heading-lg text-center font-semibold tracking-tight dark:text-white mb-12">
           Encora Reuse Platform
         </h1>
@@ -32,14 +32,14 @@ export default function ReusePlatformPage() {
           </div>
 
           <div className="mt-8 pt-8 flex flex-col sm:flex-row gap-4 border-t border-emerald-500/20">
-            <Link 
-              href="https://user.encora.co/individual" 
+            <Link
+              href="https://user.encora.co/individual"
               className="inline-flex flex-1 items-center justify-center rounded-full bg-emerald-600 px-5 py-3 text-sm font-semibold text-white hover:bg-emerald-500 transition-colors"
             >
               Join the Waitlist
             </Link>
-            <Link 
-              href="/contact-us" 
+            <Link
+              href="/contact-us"
               className="inline-flex flex-1 items-center justify-center rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
             >
               Contact Us / Book a Demo

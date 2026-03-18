@@ -9,11 +9,11 @@ export function StickyCTA() {
 
   return (
     <div
-      className="fixed inset-x-0 bottom-0 z-50 flex justify-center md:justify-end "
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center md:justify-end"
       role="region"
       aria-label="Sticky actions"
     >
-      <div className="mx-3 mb-3 flex items-center justify-between gap-3 rounded-2xl bg-emerald-700 px-4 py-3 text-white shadow-lg md:w-[23rem]">
+      <div className="pointer-events-auto mx-3 mb-3 flex items-center justify-between gap-3 rounded-2xl bg-emerald-700 px-4 py-3 text-white shadow-lg md:w-[23rem]">
         <span className="text-sm font-medium">Have a question?</span>
         <div className="flex items-center gap-2">
           <Link
