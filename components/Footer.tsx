@@ -445,6 +445,9 @@ export default function SiteFooter() {
           <Link href="/contact-us" className="hover:underline">
             Contact
           </Link>
+          <Link href="/reuse-platform" className="hover:underline">
+            Legacy Reuse Platform
+          </Link>
         </nav>
       </div>
     </footer>
