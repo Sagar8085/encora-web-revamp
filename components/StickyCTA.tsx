@@ -1,15 +1,57 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react";
 
 export function StickyCTA() {
   const pathname = usePathname();
   const hide = pathname?.startsWith("/contact") || pathname === "/thank-you";
+
+  useEffect(() => {
+    if (hide) return;
+    const footer = document.querySelector('footer');
+    const ctaWrapper = document.getElementById('sticky-cta-wrapper');
+    if (!footer || !ctaWrapper) return;
+
+    let ticking = false;
+
+    const updatePosition = () => {
+      const footerRect = footer.getBoundingClientRect();
+      const overlap = window.innerHeight - footerRect.top;
+      
+      if (overlap > 0) {
+        ctaWrapper.style.transform = `translateY(-${overlap}px)`;
+      } else {
+        ctaWrapper.style.transform = `translateY(0px)`;
+      }
+      ticking = false;
+    };
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(updatePosition);
+        ticking = true;
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleScroll, { passive: true });
+    
+    // Initial check
+    updatePosition();
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleScroll);
+    };
+  }, [hide]);
+
   if (hide) return null;
 
   return (
     <div
-      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center md:justify-end"
+      id="sticky-cta-wrapper"
+      className="pointer-events-none fixed inset-x-0 bottom-0 z-50 flex justify-center md:justify-end transition-transform duration-75 ease-out will-change-transform"
       role="region"
       aria-label="Sticky actions"
     >
