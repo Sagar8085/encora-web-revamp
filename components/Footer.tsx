@@ -420,7 +420,10 @@
 
 // export default Footer
 
+"use client";
+
 import Link from "next/link";
+import { pushToDataLayer } from "lib/gtm";
 
 export default function SiteFooter() {
   return (
@@ -445,7 +448,11 @@ export default function SiteFooter() {
           <Link href="/contact-us" className="hover:underline">
             Contact
           </Link>
-          <Link href="/reuse-platform" className="hover:underline">
+          <Link 
+            href="/reuse-platform" 
+            onClick={() => pushToDataLayer({ event: "Legacy Reuse Platform footer link click" })} 
+            className="hover:underline"
+          >
             Legacy Reuse Platform
           </Link>
         </nav>

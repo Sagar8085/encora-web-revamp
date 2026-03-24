@@ -5,8 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 import { HERO_STATS, HOW_STEPS, WHERE_FITS } from "./data";
-
-
+import { pushToDataLayer } from "lib/gtm";
 
 export default function EncoraAccessPage() {
   const sectionRef = useRef(null);
@@ -175,6 +174,7 @@ export default function EncoraAccessPage() {
                 <Link
                   href="/contact-us"
                   aria-label="Book a 20-minute demo"
+                  onClick={() => pushToDataLayer({ event: "Demo / book call click" })}
                   className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition"
                 >
                   Book a 20-minute demo
@@ -555,6 +555,7 @@ export default function EncoraAccessPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact-us"
+            onClick={() => pushToDataLayer({ event: "Demo / book call click" })}
             className="inline-flex items-center justify-center rounded-full bg-emerald-600 dark:bg-emerald-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 transition-all hover:-translate-y-0.5"
           >
             Talk to our team

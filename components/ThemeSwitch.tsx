@@ -5,7 +5,26 @@ import { useTheme } from "next-themes"
 import { AiOutlineSun, AiOutlineMoon } from "react-icons/ai"
 
 const ThemeSwitch = () => {
+  const [mounted, setMounted] = useState(false)
   const { theme, setTheme, resolvedTheme } = useTheme()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // To avoid hydration mismatch, prevent rendering anything theme-dependent
+  // on the server by checking if we have mounted on the client first.
+  if (!mounted) {
+    return (
+      <button
+        className="relative p-2 rounded-lg bg-encora-gray dark:bg-encora-mint/20 text-encora-green dark:text-white hover:bg-encora-mint/20 dark:hover:bg-encora-mint/30 transition-all duration-300 group"
+        aria-label="Toggle Dark Mode"
+        style={{ visibility: "hidden" }} // Prevents layout shift but hides content
+      >
+        <div className="relative w-6 h-6" />
+      </button>
+    )
+  }
 
   const isDark = theme === "dark" || resolvedTheme === "dark"
 

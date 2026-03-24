@@ -281,6 +281,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { pushToDataLayer } from "lib/gtm";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -322,6 +323,7 @@ export default function ContactForm() {
         setSent(true);
         resetForm();
         setStatus("success");
+        pushToDataLayer({ event: "Contact form submit" });
       } catch {
         setError("Something went wrong. Please try again.");
         setStatus("error");
