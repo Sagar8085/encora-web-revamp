@@ -86,7 +86,7 @@ export default function RootLayout({
         </Script>
       </head>
       <body
-        className={`${inter.variable}  min-h-screen font-sans antialiased`}
+        className={`${inter.variable} min-h-screen font-sans antialiased`}
       >
         <ThemeProvider
           attribute="class"
