@@ -448,13 +448,13 @@ export default function SiteFooter() {
           <Link href="/contact-us" className="hover:underline">
             Contact
           </Link>
-          <Link 
-            href="/reuse-platform" 
-            onClick={() => pushToDataLayer({ event: "footer_link_click", link_text: "Legacy Reuse Platform", page_path: window.location.pathname })} 
+          <Link
+            href="/reuse-platform"
+            onClick={() => pushToDataLayer({ event: "footer_link_click", link_text: "Legacy Reuse Platform", page_path: window.location.pathname })}
             className="hover:underline"
           >
             Legacy Reuse Platform
-          </Link>
+          </TrackedLink>
         </nav>
       </div>
     </footer>

@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
+import { sendGTMEvent } from "@/utils/gtm";
 
 export function StickyCTA() {
   const pathname = usePathname();
@@ -68,6 +69,7 @@ export function StickyCTA() {
           <a
             href="/resources/spec-sheet.pdf"
             download
+            onClick={() => sendGTMEvent({ event: "pdf_download", file: "spec-sheet.pdf" })}
             className="rounded-xl px-3 py-2 text-sm font-semibold ring-1 ring-white/40"
           >
             Spec sheet

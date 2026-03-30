@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import TrackedLink from '@/components/TrackedLink';
 
 export const metadata = {
   title: "Legacy Reuse Platform | Encora",
@@ -38,12 +39,13 @@ export default function ReusePlatformPage() {
             >
               Join the Waitlist
             </Link>
-            <Link
+            <TrackedLink
               href="/contact-us"
+              eventName="demo_book_click"
               className="inline-flex flex-1 items-center justify-center rounded-full border border-border bg-card px-5 py-3 text-sm font-semibold text-foreground hover:bg-muted transition-colors"
             >
               Contact Us / Book a Demo
-            </Link>
+            </TrackedLink>
           </div>
         </article>
       </section>

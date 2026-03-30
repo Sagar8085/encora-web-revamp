@@ -4,6 +4,7 @@ import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
+import { sendGTMEvent } from "@/utils/gtm";
 import { HERO_STATS, HOW_STEPS, WHERE_FITS } from "./data";
 import { pushToDataLayer } from "lib/gtm";
 
@@ -173,6 +174,7 @@ export default function EncoraAccessPage() {
               <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start pt-3">
                 <Link
                   href="/contact-us"
+                  onClick={() => sendGTMEvent({ event: "demo_book_click" })}
                   aria-label="Book a 20-minute demo"
                   onClick={(e) => {
                     e.stopPropagation();
@@ -569,6 +571,7 @@ export default function EncoraAccessPage() {
           <Link
             href="/resources/retai-overview.pdf"
             target="_blank"
+            onClick={() => sendGTMEvent({ event: "pdf_download", file: "retai-overview.pdf" })}
             className="inline-flex items-center justify-center rounded-full border border-border bg-background px-8 py-3 text-base font-medium text-foreground hover:bg-muted/50 transition-colors"
           >
             Get the 1-page overview
