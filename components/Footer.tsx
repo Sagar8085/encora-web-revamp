@@ -450,7 +450,7 @@ export default function SiteFooter() {
           </Link>
           <Link 
             href="/reuse-platform" 
-            onClick={() => pushToDataLayer({ event: "Legacy Reuse Platform footer link click" })} 
+            onClick={() => pushToDataLayer({ event: "footer_link_click", link_text: "Legacy Reuse Platform", page_path: window.location.pathname })} 
             className="hover:underline"
           >
             Legacy Reuse Platform

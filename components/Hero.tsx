@@ -100,7 +100,10 @@ export default function HeroSection() {
         >
           <Link
             href="/contact-us"
-            onClick={() => pushToDataLayer({ event: "Hero CTA click" })}
+            onClick={(e) => { 
+              e.stopPropagation(); 
+              pushToDataLayer({ event: "hero_cta_click", button_text: "Talk to us", page_path: "/" }); 
+            }}
             className="rounded-2xl px-5 py-3 font-medium bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
           >
             Talk to us

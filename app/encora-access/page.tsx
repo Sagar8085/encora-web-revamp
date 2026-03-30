@@ -174,7 +174,10 @@ export default function EncoraAccessPage() {
                 <Link
                   href="/contact-us"
                   aria-label="Book a 20-minute demo"
-                  onClick={() => pushToDataLayer({ event: "Demo / book call click" })}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    pushToDataLayer({ event: "book_demo_click", button_text: "Book a 20-minute demo", page_path: window.location.pathname });
+                  }}
                   className="w-full sm:w-auto inline-flex items-center justify-center rounded-full bg-emerald-600 px-6 py-3 text-sm font-semibold text-white shadow-lg hover:bg-emerald-500 transition"
                 >
                   Book a 20-minute demo
@@ -555,7 +558,10 @@ export default function EncoraAccessPage() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact-us"
-            onClick={() => pushToDataLayer({ event: "Demo / book call click" })}
+            onClick={(e) => {
+              e.stopPropagation();
+              pushToDataLayer({ event: "book_demo_click", button_text: "Talk to our team", page_path: window.location.pathname });
+            }}
             className="inline-flex items-center justify-center rounded-full bg-emerald-600 dark:bg-emerald-500 px-8 py-3 text-base font-semibold text-white shadow-lg hover:bg-emerald-700 transition-all hover:-translate-y-0.5"
           >
             Talk to our team

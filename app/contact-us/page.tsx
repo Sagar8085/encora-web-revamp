@@ -323,7 +323,7 @@ export default function ContactForm() {
         setSent(true);
         resetForm();
         setStatus("success");
-        pushToDataLayer({ event: "Contact form submit" });
+        pushToDataLayer({ event: "contact_form_submit", form_name: "Contact Us", page_path: window.location.pathname });
       } catch {
         setError("Something went wrong. Please try again.");
         setStatus("error");

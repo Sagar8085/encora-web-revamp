@@ -1,11 +1,12 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { pushToDataLayer } from "lib/gtm";
 import { usePathname } from "next/navigation";
 
 export default function GTMEventTracker() {
   const pathname = usePathname();
+  const prevPathname = useRef("");
 
   useEffect(() => {
     const handleGlobalClick = (e: MouseEvent) => {
@@ -20,8 +21,10 @@ export default function GTMEventTracker() {
       // Track PDF/deck downloads
       if (href.toLowerCase().endsWith(".pdf")) {
         pushToDataLayer({
-          event: "PDF or deck downloads",
+          event: "pdf_download",
+          file_name: href.split('/').pop() || href,
           link_url: href,
+          page_path: window.location.pathname,
         });
       }
 
@@ -31,8 +34,9 @@ export default function GTMEventTracker() {
         const url = new URL(href, window.location.origin);
         if (url.origin && url.origin !== window.location.origin && href.startsWith("http")) {
           pushToDataLayer({
-            event: "Outbound link clicks",
+            event: "outbound_link_click",
             link_url: href,
+            page_path: window.location.pathname,
           });
         }
       } catch (err) {
@@ -48,7 +52,8 @@ export default function GTMEventTracker() {
 
   // Track page views cleanly in Next.js App Router if needed
   useEffect(() => {
-    if (pathname) {
+    if (pathname && pathname !== prevPathname.current) {
+      prevPathname.current = pathname;
       pushToDataLayer({
         event: "page_view",
         page_path: pathname,

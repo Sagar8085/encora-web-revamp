@@ -1,17 +1,22 @@
-import { headers } from "next/headers";
-import { redirect } from "next/navigation";
-import React from "react";
+"use client";
 
-export default function notFound() {
-  const headersList = headers();
-  const acceptHeader = headersList.get("accept") || "";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 
-  // If the user's browser is asking for a webpage (HTML), redirect to contact us
-  if (acceptHeader.includes("text/html")) {
-    redirect("/contact-us");
-  }
+export default function NotFound() {
+  const router = useRouter();
 
-  // If it's a request for a missing asset (like a .js chunk or image file),
-  // we return null so the server gives a clean 404, preventing ChunkLoadErrors.
-  return null;
+  useEffect(() => {
+    // We use a client-side redirect instead of a server-side `redirect()` API.
+    // This guarantees that the server always responds with a strict 404 HTTP status.
+    // If a missing JS asset chunk hits this route, Webpack will process the 404 status gracefully.
+    // A server-side redirect (307) would serve 200 OK (HTML text), causing ChunkLoadError and '<' syntax errors.
+    router.replace("/contact-us");
+  }, [router]);
+
+  return (
+    <div style={{ display: "none" }}>
+      404 - Not Found
+    </div>
+  );
 }
