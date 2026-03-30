@@ -454,7 +454,7 @@ export default function SiteFooter() {
             className="hover:underline"
           >
             Legacy Reuse Platform
-          </TrackedLink>
+          </Link>
         </nav>
       </div>
     </footer>

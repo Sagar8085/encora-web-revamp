@@ -8,7 +8,6 @@ import "styles/globals.css";
 import "styles/animations.css";
 import Header from "components/Header";
 import Footer from "components/Footer";
-import Script from "next/script";
 import GTMEventTracker from "components/GTMEventTracker";
 
 // const roboto = Roboto({
@@ -76,11 +75,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
-<<<<<<< HEAD
         <Script id="gtm-script" strategy="afterInteractive">
-=======
-        <Script id="google-tag-manager" strategy="afterInteractive">
->>>>>>> df58247aedc55fb6ae2464d75743e653a1c28191
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
             new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
