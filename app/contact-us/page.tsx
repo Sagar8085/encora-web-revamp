@@ -281,6 +281,7 @@
 import { useState } from "react";
 import { useFormik } from "formik";
 import * as Yup from "yup";
+import { sendGTMEvent } from "@/utils/gtm";
 
 export default function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -319,6 +320,7 @@ export default function ContactForm() {
 
         if (!res.ok) throw new Error("Failed to send");
 
+        sendGTMEvent({ event: "contact_form_submit" });
         setSent(true);
         resetForm();
         setStatus("success");

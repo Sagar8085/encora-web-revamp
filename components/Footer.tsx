@@ -421,6 +421,7 @@
 // export default Footer
 
 import Link from "next/link";
+import TrackedLink from "@/components/TrackedLink";
 
 export default function SiteFooter() {
   return (
@@ -445,9 +446,9 @@ export default function SiteFooter() {
           <Link href="/contact-us" className="hover:underline">
             Contact
           </Link>
-          <Link href="/reuse-platform" className="hover:underline">
+          <TrackedLink href="/reuse-platform" eventName="footer_reuse_click" className="hover:underline">
             Legacy Reuse Platform
-          </Link>
+          </TrackedLink>
         </nav>
       </div>
     </footer>

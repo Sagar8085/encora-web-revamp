@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
+import { sendGTMEvent } from "@/utils/gtm";
 
 export default function HeroSection() {
   const containerVariants = {
@@ -99,6 +100,7 @@ export default function HeroSection() {
         >
           <Link
             href="/contact-us"
+            onClick={() => sendGTMEvent({ event: "hero_cta_click" })}
             className="rounded-2xl px-5 py-3 font-medium bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
           >
             Talk to us
