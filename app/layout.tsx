@@ -75,6 +75,46 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="icon" href="/favicon.png" type="image/png" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.addEventListener('error', function(event) {
+                var isChunkLoadError = event.error && (event.error.name === 'ChunkLoadError' || (event.error.message && event.error.message.indexOf('Loading chunk') > -1));
+                var target = event.target || event.srcElement;
+                var isNextScriptError = target && 
+                                        (target.tagName === 'SCRIPT' || target.tagName === 'LINK') && 
+                                        target.src && 
+                                        target.src.indexOf('_next/static') > -1 && 
+                                        event.type === 'error';
+                var isNextLinkError = target && 
+                                      target.tagName === 'LINK' && 
+                                      target.href && 
+                                      target.href.indexOf('_next/static') > -1 && 
+                                      event.type === 'error';
+                
+                if (isChunkLoadError || isNextScriptError || isNextLinkError) {
+                  var chunkFailed = sessionStorage.getItem("native_chunk_failed");
+                  if (!chunkFailed) {
+                    sessionStorage.setItem("native_chunk_failed", "true");
+                    setTimeout(function() { sessionStorage.removeItem("native_chunk_failed"); }, 10000);
+                    window.location.replace(window.location.pathname + '?v=' + Date.now());
+                  }
+                }
+              }, true);
+
+              window.addEventListener('unhandledrejection', function(event) {
+                if (event.reason && (event.reason.name === 'ChunkLoadError' || (event.reason.message && event.reason.message.indexOf('Loading chunk') > -1))) {
+                  var chunkFailed = sessionStorage.getItem("native_chunk_failed");
+                  if (!chunkFailed) {
+                    sessionStorage.setItem("native_chunk_failed", "true");
+                    setTimeout(function() { sessionStorage.removeItem("native_chunk_failed"); }, 10000);
+                    window.location.replace(window.location.pathname + '?v=' + Date.now());
+                  }
+                }
+              });
+            `
+          }}
+        />
         <Script id="gtm-script" strategy="afterInteractive">
           {`
             (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
