@@ -1,27 +1,26 @@
-import { BrainCircuit, FileCheck, ChartLine } from "lucide-react";
+import { Camera, SearchCheck, Route, CircleDollarSign } from "lucide-react";
 
 const AISection = () => {
   const features = [
     {
-      title: "Intelligent Routing",
-      description:
-        "AI-powered decision engine routes returns to the optimal destination based on condition, value, and market demand.",
-      icon: <BrainCircuit className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "40% faster",
+      title: "Proof at drop",
+      description: "Capture verified condition and item details right at the point of return.",
+      icon: <Camera className="w-5 h-5 dark:text-encora-green-dark" />,
     },
     {
-      title: "Compliance Ready",
-      description:
-        "Built-in support for extended producer responsibility (EPR) regulations and circular economy mandates.",
-      icon: <FileCheck className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "100% compliant",
+      title: "Decisioning at intake",
+      description: "Make real-time routing and process decisions before items ever enter the network.",
+      icon: <SearchCheck className="w-5 h-5 dark:text-encora-green-dark" />,
     },
     {
-      title: "Predictive Analytics",
-      description:
-        "Machine learning models predict return patterns and optimize inventory placement for maximum recovery value.",
-      icon: <ChartLine className="w-5 h-5 dark:text-encora-green-dark" />,
-      stat: "25% ↑ recovery",
+      title: "Smarter routing",
+      description: "Direct returns to their optimal destination instantly, reducing unnecessary miles.",
+      icon: <Route className="w-5 h-5 dark:text-encora-green-dark" />,
+    },
+    {
+      title: "Lower processing cost",
+      description: "Minimize handling time and touchpoints to dramatically reduce reverse logistics costs.",
+      icon: <CircleDollarSign className="w-5 h-5 dark:text-encora-green-dark" />,
     },
   ];
 
@@ -29,31 +28,22 @@ const AISection = () => {
     <section className=" section-spacing border-t border-b border-[#E0E0E0] dark:border-encora-mint/30">
       <div className="container-encora space-y-4">
         <div className="text-center ">
-          <h2 className="heading-lg  dark:text-white">AI Where It Matters</h2>
-          <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
-            Advanced intelligence meets operational simplicity. Encora's AI
-            works behind the scenes to optimize every return decision.
-          </p>
+          <h2 className="heading-lg  dark:text-white">What makes Encora different</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
           {features.map((feature, index) => (
             <div
               key={index}
               className=" rounded-lg p-8 shadow-sm hover:shadow-md transition-all duration-300 border border-[#E0E0E0] dark:border-encora-mint/30 group hover:border-encora-mint backdrop-blur-sm"
             >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="icon-container group-hover:bg-encora-mint dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-encora-green transition-all ">
+              <div className="flex flex-col mb-4">
+                <div className="icon-container inline-flex mb-4 group-hover:bg-encora-mint dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-encora-green transition-all ">
                   <span className="text-3xl">{feature.icon}</span>
                 </div>
-                <div className="flex-1">
-                  <div className="inline-block px-3 py-1  text-encora-green dark:text-white text-xs font-bold rounded-full mb-2">
-                    {feature.stat}
-                  </div>
-                  <h3 className="text-xl font-bold text-encora-green dark:text-white mb-2">
-                    {feature.title}
-                  </h3>
-                </div>
+                <h3 className="text-xl font-bold text-encora-green dark:text-white">
+                  {feature.title}
+                </h3>
               </div>
               <p className="text-sm font-normal text-muted-foreground dark:text-white/70">
                 {feature.description}
@@ -65,63 +55,5 @@ const AISection = () => {
     </section>
   );
 };
-
-// export default AISectionconst AISection = () => {
-//   const features = [
-//     {
-//       title: "Intelligent Routing",
-//       description: "AI-powered decision engine routes returns to the optimal destination based on condition, value, and market demand.",
-//       icon: "🧠",
-//       stat: "40% faster",
-//     },
-//     {
-//       title: "Compliance Ready",
-//       description: "Built-in support for extended producer responsibility (EPR) regulations and circular economy mandates.",
-//       icon: "📋",
-//       stat: "100% compliant",
-//     },
-//     {
-//       title: "Predictive Analytics",
-//       description: "Machine learning models predict return patterns and optimize inventory placement for maximum recovery value.",
-//       icon: "📊",
-//       stat: "25% ↑ recovery",
-//     },
-//   ]
-
-//   return (
-//     <section className="bg-white section-spacing border-t border-b border-[#E0E0E0]">
-//       <div className="container-encora">
-//         <div className="text-center mb-16">
-//           <h2 className="heading-lg mb-4">AI Where It Matters</h2>
-//           <p className="body-text-lg max-w-2xl mx-auto">
-//             Advanced intelligence meets operational simplicity. Encora's AI works behind the scenes to optimize every return decision.
-//           </p>
-//         </div>
-
-//         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-//           {features.map((feature, index) => (
-//             <div
-//               key={index}
-//               className="card-module group hover:border-encora-mint"
-//             >
-//               <div className="flex items-start gap-4 mb-4">
-//                 <div className="icon-container group-hover:bg-encora-mint group-hover:text-white transition-all">
-//                   <span className="text-3xl">{feature.icon}</span>
-//                 </div>
-//                 <div className="flex-1">
-//                   <div className="inline-block px-3 py-1 bg-encora-mint text-encora-green text-xs font-bold rounded-full mb-2">
-//                     {feature.stat}
-//                   </div>
-//                   <h3 className="text-xl font-bold text-encora-green mb-2">{feature.title}</h3>
-//                 </div>
-//               </div>
-//               <p className="body-text leading-relaxed">{feature.description}</p>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
 
 export default AISection;

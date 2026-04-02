@@ -34,11 +34,10 @@ const ProductModules = () => {
       <div className="container-encora space-y-4">
         <div className="text-center">
           <h2 className="heading-lg mb-4 dark:text-white">
-            Core Platform Modules
+            From drop-off to decision
           </h2>
-          <p className="text-sm sm:text-base text-muted-foreground  mx-auto dark:text-white/80">
-            Encora's modular architecture gives you the flexibility to build the
-            returns solution that fits your business.
+          <p className="text-sm sm:text-base text-muted-foreground  max-w-4xl mx-auto dark:text-white/80">
+            Encora combines physical return infrastructure with verification, evidence capture, and routing logic so teams are not just collecting returns, but making better return decisions from the start.
           </p>
         </div>
 

@@ -58,12 +58,15 @@ export default function HeroSection() {
         animate="visible"
       >
         {/* Headline */}
-        <motion.div variants={itemVariants}>
+        <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
-            <span className="block leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-encora-green dark:text-encora-mint">
-              Smart returns. Verified.
+            <span className="block leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-encora-green dark:text-encora-mint">
+              Active return infrastructure for retailers
             </span>
           </h1>
+          <p className="text-lg md:text-xl text-encora-green/80 dark:text-encora-mint/90 mb-10 leading-relaxed font-medium">
+            Encora helps retailers verify returns at drop-off, reduce handling cost, and route items more intelligently before they move into reverse logistics.
+          </p>
         </motion.div>
 
         {/* Value props */}
@@ -92,7 +95,6 @@ export default function HeroSection() {
             </motion.div>
           ))}
         </motion.div>
-
         {/* CTA Buttons */}
         <motion.div
           className="mt-8 flex flex-wrap gap-3 justify-center mb-12"
