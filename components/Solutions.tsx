@@ -1,40 +1,20 @@
-// import { recycle, Retail, Recovery } from "lucide-react";
-const Solutions = () => {
-  const solutions = [
-    {
-      title: "Reuse",
-      description:
-        "Maximize product lifecycle value through intelligent reuse and resale channels.",
-      icon: "♻️",
-    },
-    {
-      title: "Retail",
-      description:
-        "Streamline in-store and online returns with unified processing.",
-      icon: "🛍️",
-    },
-    {
-      title: "Recovery",
-      description: "Recover maximum value from damaged or defective products.",
-      icon: "💰",
-    },
-  ];
+import { solutionsData } from "@/app/data";
 
+const Solutions = () => {
   return (
     <section className="section-spacing border-b border-[#E0E0E0] dark:border-encora-mint/30">
       <div className="container-encora space-y-4">
         <div className="text-center ">
           <h2 className="heading-lg  dark:text-white">
-            Solutions for Every Channel
+            {solutionsData.heading}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground max-w-6xl mx-auto dark:text-white/80">
-            Whether you're managing reuse, retail returns, or recovery, Encora
-            adapts to your needs.
+            {solutionsData.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {solutions.map((solution, index) => (
+          {solutionsData.solutions.map((solution, index) => (
             <div
               key={index}
               className="text-center p-8 rounded-lg hover:bg-encora-gray dark:hover:bg-white/10 transition-all duration-300"

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { sendGTMEvent } from "@/utils/gtm";
+import { stickyCtaData } from "@/app/data";
 
 export function StickyCTA() {
   const pathname = usePathname();
@@ -57,22 +58,22 @@ export function StickyCTA() {
       aria-label="Sticky actions"
     >
       <div className="pointer-events-auto mx-3 mb-3 flex items-center justify-between gap-3 rounded-2xl bg-emerald-700 px-4 py-3 text-white shadow-lg md:w-[23rem]">
-        <span className="text-sm font-medium">Have a question?</span>
+        <span className="text-sm font-medium">{stickyCtaData.questionText}</span>
         <div className="flex items-center gap-2">
           <Link
-            href="/contact-us"
+            href={stickyCtaData.talkButtonLink}
             className="rounded-xl bg-white px-3 py-2 text-sm font-semibold text-emerald-800"
           >
-            Talk to us
+            {stickyCtaData.talkButtonText}
           </Link>
 
           <a
-            href="/resources/spec-sheet.pdf"
+            href={stickyCtaData.specSheetLink}
             download
             onClick={() => sendGTMEvent({ event: "pdf_download", file: "spec-sheet.pdf" })}
             className="rounded-xl px-3 py-2 text-sm font-semibold ring-1 ring-white/40"
           >
-            Spec sheet
+            {stickyCtaData.specSheetText}
           </a>
         </div>
       </div>

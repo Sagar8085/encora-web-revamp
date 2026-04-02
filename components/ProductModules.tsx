@@ -1,48 +1,21 @@
-// import { Archive, QrCode, ScanLine, BadgeCheck, Webhook } from "lucide-react";
-import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
+import { productModulesData } from "@/app/data";
 
 const ProductModules = () => {
-  const modules = [
-    {
-      title: "Bins",
-      description:
-        "Intelligent bin management and tracking for efficient returns processing.",
-      icon: BinIcon,
-    },
-    {
-      title: "Tags",
-      description:
-        "Smart labeling and identification system for product categorization.",
-      icon: TagsIcon,
-    },
-    {
-      title: "Verify",
-      description:
-        "Automated verification and compliance checking for all returns.",
-      icon: VerifyIcon,
-    },
-    {
-      title: "Connect",
-      description:
-        "Seamless integration with your existing retail and logistics systems.",
-      icon: ConnectIcon,
-    },
-  ];
 
   return (
     <section className=" section-spacing ">
       <div className="container-encora space-y-4">
         <div className="text-center">
           <h2 className="heading-lg mb-4 dark:text-white">
-            From drop-off to decision
+            {productModulesData.heading}
           </h2>
           <p className="text-sm sm:text-base text-muted-foreground  max-w-4xl mx-auto dark:text-white/80">
-            Encora combines physical return infrastructure with verification, evidence capture, and routing logic so teams are not just collecting returns, but making better return decisions from the start.
+            {productModulesData.description}
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 ">
-          {modules.map((module, index) => (
+          {productModulesData.modules.map((module, index) => (
             <div
               key={index}
               className="rounded-lg p-8 shadow-sm border border-[#E0E0E0] dark:border-encora-mint/30
@@ -50,11 +23,14 @@ const ProductModules = () => {
              hover:bg-white/80 dark:hover:bg-encora-green/10 hover:border-encora-mint/50"
             >
               <div className="icon-container mb-4 transition-all duration-300 bg-emerald-500/10 dark:bg-white/10 group-hover:bg-encora-mint dark:group-hover:bg-white group-hover:text-white dark:group-hover:text-encora-green">
-                {typeof module.icon === "function" ? (
-                  <module.icon className="dark:stroke-encora-mint-light" />
-                ) : (
-                  <module.icon className="w-6 h-6 text-encora-green dark:text-encora-mint dark:stroke-red-500" />
-                )}
+                {(() => {
+                  const Icon = module.icon as React.ElementType;
+                  return typeof module.icon === "function" ? (
+                    <Icon className="dark:stroke-encora-mint-light" />
+                  ) : (
+                    <Icon className="w-6 h-6 text-encora-green dark:text-encora-mint dark:stroke-red-500" />
+                  );
+                })()}
                 {/* <span className="text-3xl">{module.icon}</span> */}
               </div>
 

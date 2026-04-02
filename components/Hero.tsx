@@ -2,9 +2,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 import { pushToDataLayer } from "lib/gtm";
-
+import { heroData } from "@/app/data";
 export default function HeroSection() {
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -61,11 +60,11 @@ export default function HeroSection() {
         <motion.div variants={itemVariants} className="max-w-4xl mx-auto">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
             <span className="block leading-tight text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-encora-green dark:text-encora-mint">
-              Active return infrastructure for retailers
+              {heroData.headline}
             </span>
           </h1>
           <p className="text-lg md:text-xl text-encora-green/80 dark:text-encora-mint/90 mb-10 leading-relaxed font-medium">
-            Encora helps retailers verify returns at drop-off, reduce handling cost, and route items more intelligently before they move into reverse logistics.
+            {heroData.subheadline}
           </p>
         </motion.div>
 
@@ -74,12 +73,7 @@ export default function HeroSection() {
           className="flex flex-wrap justify-center gap-6 mb-12 text-sm sm:text-base text-encora-green/70 dark:text-encora-mint"
           variants={itemVariants}
         >
-          {[
-            { icon: <BinIcon className="h-5 w-5" />, text: "Bins" },
-            { icon: <TagsIcon className="h-5 w-5" />, text: "Tags" },
-            { icon: <VerifyIcon className="h-5 w-5" />, text: "Verify" },
-            { icon: <ConnectIcon className="h-5 w-5" />, text: "Connect" },
-          ].map((item, index) => (
+          {heroData.valueProps.map((item, index) => (
             <motion.div
               key={index}
               className="flex items-center gap-2"
@@ -101,21 +95,21 @@ export default function HeroSection() {
           variants={itemVariants}
         >
           <Link
-            href="/contact-us"
+            href={heroData.primaryCta.link}
             onClick={(e) => {
               e.stopPropagation();
-              pushToDataLayer({ event: "hero_cta_click", button_text: "Talk to us", page_path: "/" });
+              pushToDataLayer({ event: "hero_cta_click", button_text: heroData.primaryCta.text, page_path: "/" });
             }}
             className="rounded-2xl px-5 py-3 font-medium bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg hover:shadow-xl transition-all duration-200"
           >
-            Talk to us
+            {heroData.primaryCta.text}
           </Link>
 
           <Link
-            href="/bin"
+            href={heroData.secondaryCta.link}
             className="inline-flex rounded-2xl px-5 py-3 font-medium items-center justify-center border-2 border-emerald-500 text-emerald-600  hover:bg-emerald-50 shadow-md hover:shadow-lg transition-all duration-200 dark:bg-transparent dark:border-white/20 dark:text-white dark:hover:bg-white/10"
           >
-            See the Bin
+            {heroData.secondaryCta.text}
           </Link>
         </motion.div>
       </motion.div>
