@@ -2,6 +2,45 @@ import React from "react";
 import { Smartphone, Award, Radio } from "lucide-react";
 import { BinIcon, TagsIcon, VerifyIcon, ConnectIcon } from "@/components/icon";
 
+export const heroData = {
+    eyebrow: "Reuse Encora",
+    headline: "Smart reuse — no app required",
+    description: "Students borrow in seconds. At return, RFID-tagged containers auto-open the correct slot, auto-lock, and the bin captures photo + weight — proof-grade data for campus ops. The mobile app is optional.",
+    primaryCtaText: "Talk to us",
+    primaryCtaLink: "/contact-us",
+    secondaryCtaText: "Spec sheet",
+    secondaryCtaLink: "/resources/spec-sheet.pdf",
+    badgeText: "Powered by RetAI verification"
+};
+
+export const evidenceData = {
+    heading: "Why it works",
+    intro: "Reuse programs live or die on proof. Encora captures evidence automatically and turns it into trusted data for operations, refunds, and reporting.",
+    bullets: [
+        {
+            bold: "Evidence at drop",
+            text: " eliminates disputes and accelerates refunds."
+        },
+        {
+            bold: "Ops telemetry",
+            text: " surfaces late returns, hotspots, and operational risk."
+        },
+        {
+            bold: "API-first architecture",
+            text: " integrates with existing campus systems — no rip-and-replace."
+        }
+    ],
+    worksWithHeading: "Works with your campus systems",
+    worksWithDescription: "Integrates with leading campus commerce providers (e.g. Transact, Atrium, TouchNet, CBORD, Dine On) via APIs and webhooks.",
+    worksWithDisclaimer: "Examples shown. Use does not imply partnership."
+};
+
+export const integrationsData = {
+    heading: "Integrations",
+    description: "Works with leading campus commerce providers (e.g., Transact, Atrium, TouchNet, CBORD, Dine On) via APIs/webhooks — no POS rip-and-replace.",
+    disclaimer: "Examples of supported environments; use does not imply partnership."
+};
+
 export const threeSteps = [
     {
         img: "/images/Borrow_image.jpeg",

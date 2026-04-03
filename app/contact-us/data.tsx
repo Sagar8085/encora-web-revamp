@@ -1,0 +1,33 @@
+export const contactData = {
+  heading: "Let’s talk about your use case",
+  subheading: "Whether you’re evaluating reusable systems, retail returns, or compliance-driven drop-off, we’ll help you determine how Encora fits into your existing operations.",
+  successHeading: "Thanks — we’ll follow up within 1–2 business days.",
+  successText: "Prefer email? ",
+  successEmail: "info@encora.com",
+  successEmailLink: "mailto:info@encora.com",
+  labels: {
+    name: "Name",
+    organization: "Organization",
+    email: "Email",
+    useCase: "What are you reaching out about?",
+    message: "Message",
+  },
+  placeholders: {
+    name: "Your name",
+    organization: "Your organization",
+    email: "you@email.com",
+    message: "What are you trying to solve? Timeline?",
+  },
+  useCaseOptions: [
+    { value: "", label: "Select…" },
+    { value: "reusables", label: "Reusable foodware or circular systems" },
+    { value: "returns", label: "Retail returns / Encora Access (RetAI)" },
+    { value: "compliance", label: "Compliance, EPR, or reporting" },
+    { value: "general", label: "General inquiry" },
+  ],
+  submitButtonText: "Contact Us",
+  submittingText: "Sending…",
+  privacyTextStart: "By submitting, you agree to our ",
+  privacyTextLink: "Privacy Policy",
+  privacyTextEnd: ".",
+};
