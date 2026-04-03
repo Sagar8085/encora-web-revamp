@@ -67,16 +67,7 @@ export default function HeroSection() {
       className="relative min-h-[90vh] flex items-center overflow-hidden"
     >
       {/* Background Video */}
-      {/* <div className="absolute inset-0 -z-10 overflow-hidden">
-        <video
-          ref={videoRef}
-          className="w-full h-full object-cover opacity-40"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-      </div> */}
+
       <div
         className="absolute inset-0 -z-10 bg-cover bg-center opacity-40"
         style={{ backgroundImage: "url('/images/retai-after.jpeg')" }}
@@ -106,9 +97,7 @@ export default function HeroSection() {
         {/* Headline */}
         <div className="animate-on-scroll">
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6">
-            {/* <span className="block text-encora-green dark:text-white leading-tight animate-text-focus">
-              Encora
-            </span> */}
+
             <span className="block bg-gradient-to-r from-encora-green via-encora-mint to-encora-green dark:from-encora-mint dark:via-white dark:to-encora-mint bg-clip-text text-transparent leading-tight animate-gradient-flow bg-[length:200%_auto] text-3xl sm:text-4xl md:text-5xl lg:text-7xl">
               {heroSectionData.headline}
             </span>
